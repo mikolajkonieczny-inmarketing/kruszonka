@@ -9,6 +9,10 @@
       "destination": "/project/aktualnosci/:slug.html"
     },
     {
+      "source": "/przepisy/:slug",
+      "destination": "/project/przepisy/:slug"
+    },
+    {
       "source": "/",
       "destination": "/project/index.html"
     }

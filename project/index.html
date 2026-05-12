@@ -688,6 +688,141 @@ section {
   --stamp-rotate: -1deg;
 }
 
+.recipes {
+  position: relative;
+  overflow: hidden;
+  background: var(--pink);
+  color: var(--ink);
+}
+
+.recipes .label,
+.recipes .section-copy {
+  color: var(--ink);
+}
+
+.recipes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,248,232,0.72) 0 2px, transparent 2px 28px);
+}
+
+.recipes .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.recipes .section-head {
+  margin-bottom: 2rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  background: var(--recipe-bg);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 7px 7px 0 var(--ink);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 11px 11px 0 var(--ink);
+}
+
+.recipe-visual {
+  position: relative;
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 2px solid var(--ink);
+  background:
+    radial-gradient(circle at 20% 22%, rgba(255,248,232,0.86) 0 7px, transparent 8px),
+    radial-gradient(circle at 78% 30%, rgba(27,71,103,0.18) 0 5px, transparent 6px),
+    linear-gradient(135deg, var(--recipe-accent), rgba(255,248,232,0.5));
+}
+
+.recipe-visual::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 2px solid rgba(27, 71, 103, 0.52);
+  border-radius: 999px;
+  transform: rotate(-7deg);
+}
+
+.recipe-visual img {
+  position: relative;
+  z-index: 1;
+  max-height: 182px;
+  width: auto;
+  filter: drop-shadow(8px 12px 0 rgba(27, 71, 103, 0.18));
+  transform: rotate(var(--recipe-rotate, -6deg));
+  transition: transform 240ms ease;
+}
+
+.recipe-card:hover .recipe-visual img {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.recipe-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.1rem;
+}
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.recipe-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0.3rem 0.55rem;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  background: var(--paper);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.recipe-card h3 {
+  font-size: 2.45rem;
+  line-height: 0.96;
+}
+
+.recipe-card p {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.recipe-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 .blog {
   background: var(--paper);
 }
@@ -1025,6 +1160,7 @@ footer {
 
   .products-grid,
   .how-grid,
+  .recipe-grid,
   .social-icons {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1098,6 +1234,7 @@ footer {
 
   .products-grid,
   .how-grid,
+  .recipe-grid,
   .blog-grid,
   .ingredient-tags,
   .social-icons {
@@ -1106,6 +1243,7 @@ footer {
 
   .product-card,
   .how-card,
+  .recipe-card,
   .blog-card {
     min-height: auto;
   }
@@ -1153,6 +1291,7 @@ footer {
       <li><a href="#how">Jak używać</a></li>
       <li><a href="#nostalgia">Nostalgia</a></li>
       <li><a href="#sklad">Skład</a></li>
+      <li><a href="#przepisy">Przepisy</a></li>
       <li><a href="#aktualnosci">Aktualności</a></li>
     </ul>
     <a href="#smaki" class="btn nav-cta">krush it!</a>
@@ -1329,6 +1468,64 @@ footer {
       </div>
     </section>
 
+    <section class="recipes" id="przepisy">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="label reveal">strefa przepisów</p>
+            <h2 class="title reveal">KRUSH W KUCHNI</h2>
+          </div>
+        </div>
+
+        <div class="recipe-grid">
+          <a href="przepisy/lazy-apple-pie.html" class="recipe-card reveal" style="--recipe-bg:#FFF3B7;--recipe-accent:#F4C121;--recipe-rotate:-8deg;transition-delay:80ms">
+            <div class="recipe-visual">
+              <img src="../produkt/first_krush.svg" alt="KRUSHONKA First Krush" loading="lazy">
+            </div>
+            <div class="recipe-content">
+              <div class="recipe-meta">
+                <span class="recipe-pill">5 min</span>
+                <span class="recipe-pill">bez pieczenia</span>
+              </div>
+              <h3>Lazy apple pie</h3>
+              <p>Szarlotka na skróty: jabłka z cynamonem, kremowy jogurt i First Krush zamiast kruchego ciasta.</p>
+              <span class="btn">Wejdź w przepis</span>
+            </div>
+          </a>
+
+          <a href="przepisy/matcha-bowl.html" class="recipe-card reveal" style="--recipe-bg:#EBF2D8;--recipe-accent:#7C983D;--recipe-rotate:7deg;transition-delay:160ms">
+            <div class="recipe-visual">
+              <img src="../produkt/holy_matcha.svg" alt="KRUSHONKA Holy Matcha" loading="lazy">
+            </div>
+            <div class="recipe-content">
+              <div class="recipe-meta">
+                <span class="recipe-pill">7 min</span>
+                <span class="recipe-pill">poranek</span>
+              </div>
+              <h3>Matcha bowl</h3>
+              <p>Zielona miska dla tych, którzy wiecznie się spieszą: skyr, banan, matcha i chrupiący finisz.</p>
+              <span class="btn">Wejdź w przepis</span>
+            </div>
+          </a>
+
+          <a href="przepisy/cheat-day-combo.html" class="recipe-card reveal" style="--recipe-bg:#EFE1FA;--recipe-accent:#703F98;--recipe-rotate:-5deg;transition-delay:240ms">
+            <div class="recipe-visual">
+              <img src="../produkt/krush_coco.svg" alt="KRUSHONKA Krush Coco" loading="lazy">
+            </div>
+            <div class="recipe-content">
+              <div class="recipe-meta">
+                <span class="recipe-pill">10 min</span>
+                <span class="recipe-pill">extra</span>
+              </div>
+              <h3>Cheat day combo</h3>
+              <p>Słone masło orzechowe, czekolada i Krush Coco. Deser, który nie przeprasza za ambicje.</p>
+              <span class="btn">Wejdź w przepis</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="blog" id="aktualnosci">
       <div class="section-inner">
         <div class="section-head">
@@ -1406,16 +1603,16 @@ footer {
             </div>
           </a>
 
-          <a href=”aktualnosci/baza.html” class=”blog-card reveal” style=”--card-bg:#FFF8E8”>
-            <div class=”blog-media”>
-              <img src=”uploads/news/baza-card.jpg” alt=”Ekipa BAZA w odcinku Upieczeni z KRUSHONKĄ” loading=”lazy”>
+          <a href="aktualnosci/baza.html" class="blog-card reveal" style="--card-bg:#FFF8E8">
+            <div class="blog-media">
+              <img src="uploads/news/baza-card.jpg" alt="Ekipa BAZA w odcinku Upieczeni z KRUSHONKĄ" loading="lazy">
             </div>
-            <div class=”blog-content”>
-              <div class=”blog-meta”><span class=”blog-pill” style=”--pill-bg:var(--red);--pill-ink:var(--paper)”>wideo</span></div>
+            <div class="blog-content">
+              <div class="blog-meta"><span class="blog-pill" style="--pill-bg:var(--red);--pill-ink:var(--paper)">wideo</span></div>
               <h3>BAZA SERWUJE KRUSHONKĘ</h3>
-              <p class=”blog-copy”>Nasza KRUSHONKA wjechała na ekrany. W nowym odcinku „Upieczeni” influencerzy mierzą się z kulinarnym wyzwaniem, a motyw przewodni jest oczywisty: Big Crush Energy.</p>
-              <p class=”blog-alert”>Lećcie oglądać na kanale BAZA i dajcie znać, który deser wygląda najlepiej.</p>
-              <span class=”btn” style=”align-self:flex-start;margin-top:0.5rem”>Czytaj więcej</span>
+              <p class="blog-copy">Nasza KRUSHONKA wjechała na ekrany. W nowym odcinku „Upieczeni” influencerzy mierzą się z kulinarnym wyzwaniem, a motyw przewodni jest oczywisty: Big Crush Energy.</p>
+              <p class="blog-alert">Lećcie oglądać na kanale BAZA i dajcie znać, który deser wygląda najlepiej.</p>
+              <span class="btn" style="align-self:flex-start;margin-top:0.5rem">Czytaj więcej</span>
             </div>
           </a>
 
