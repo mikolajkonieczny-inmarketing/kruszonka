@@ -5,6 +5,10 @@
       "destination": "/project/uploads/:path*"
     },
     {
+      "source": "/aktualnosci/:slug",
+      "destination": "/project/aktualnosci/:slug.html"
+    },
+    {
       "source": "/",
       "destination": "/project/index.html"
     }
