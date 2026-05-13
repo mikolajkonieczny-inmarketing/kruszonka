@@ -746,38 +746,30 @@ section {
 
 .recipe-visual {
   position: relative;
-  min-height: 210px;
+  height: 230px;
   display: grid;
   place-items: center;
   overflow: hidden;
   border-bottom: 2px solid var(--ink);
-  background:
-    radial-gradient(circle at 20% 22%, rgba(255,248,232,0.86) 0 7px, transparent 8px),
-    radial-gradient(circle at 78% 30%, rgba(27,71,103,0.18) 0 5px, transparent 6px),
-    linear-gradient(135deg, var(--recipe-accent), rgba(255,248,232,0.5));
+  background: var(--recipe-accent);
 }
 
 .recipe-visual::before {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border: 2px solid rgba(27, 71, 103, 0.52);
-  border-radius: 999px;
-  transform: rotate(-7deg);
+  content: none;
 }
 
 .recipe-visual img {
-  position: relative;
-  z-index: 1;
-  max-height: 182px;
-  width: auto;
-  filter: drop-shadow(8px 12px 0 rgba(27, 71, 103, 0.18));
-  transform: rotate(var(--recipe-rotate, -6deg));
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  filter: none;
+  transform: scale(1.01);
   transition: transform 240ms ease;
 }
 
 .recipe-card:hover .recipe-visual img {
-  transform: rotate(0deg) scale(1.04);
+  transform: scale(1.06);
 }
 
 .recipe-content {
@@ -1480,7 +1472,7 @@ footer {
         <div class="recipe-grid">
           <a href="przepisy/lazy-apple-pie.html" class="recipe-card reveal" style="--recipe-bg:#FFF3B7;--recipe-accent:#F4C121;--recipe-rotate:-8deg;transition-delay:80ms">
             <div class="recipe-visual">
-              <img src="../produkt/first_krush.svg" alt="KRUSHONKA First Krush" loading="lazy">
+              <img src="uploads/recipes/lazy-apple-pie.webp" alt="Lazy apple pie z KRUSHONKĄ First Krush" loading="lazy">
             </div>
             <div class="recipe-content">
               <div class="recipe-meta">
@@ -1495,7 +1487,7 @@ footer {
 
           <a href="przepisy/matcha-bowl.html" class="recipe-card reveal" style="--recipe-bg:#EBF2D8;--recipe-accent:#7C983D;--recipe-rotate:7deg;transition-delay:160ms">
             <div class="recipe-visual">
-              <img src="../produkt/holy_matcha.svg" alt="KRUSHONKA Holy Matcha" loading="lazy">
+              <img src="uploads/recipes/matcha-bowl.webp" alt="Matcha bowl z KRUSHONKĄ Holy Matcha" loading="lazy">
             </div>
             <div class="recipe-content">
               <div class="recipe-meta">
@@ -1510,7 +1502,7 @@ footer {
 
           <a href="przepisy/cheat-day-combo.html" class="recipe-card reveal" style="--recipe-bg:#EFE1FA;--recipe-accent:#703F98;--recipe-rotate:-5deg;transition-delay:240ms">
             <div class="recipe-visual">
-              <img src="../produkt/krush_coco.svg" alt="KRUSHONKA Krush Coco" loading="lazy">
+              <img src="uploads/recipes/cheat-day-combo.webp" alt="Cheat day combo z KRUSHONKĄ Krush Coco" loading="lazy">
             </div>
             <div class="recipe-content">
               <div class="recipe-meta">

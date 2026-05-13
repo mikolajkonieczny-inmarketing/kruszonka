@@ -25,8 +25,8 @@ nav { position:fixed; inset:0 0 auto; z-index:20; height:78px; display:grid; gri
 h1 { max-width:760px; font-family:"Bebas Neue",Impact,sans-serif; font-size:clamp(4.5rem,10vw,9rem); line-height:.84; letter-spacing:0; text-transform:uppercase; }
 .lead { max-width:680px; margin-top:1.2rem; font-size:1.08rem; line-height:1.7; }
 .hero-card { position:relative; min-height:430px; display:grid; place-items:center; overflow:hidden; border:2px solid var(--ink); border-radius:4px; background:var(--paper); box-shadow:10px 10px 0 var(--ink); }
-.hero-card::before { content:""; position:absolute; width:80%; aspect-ratio:1; border:2px solid rgba(27,71,103,.35); border-radius:50%; transform:rotate(8deg); }
-.hero-card img { position:relative; z-index:1; max-height:360px; filter:drop-shadow(9px 15px 0 rgba(27,71,103,.18)); transform:rotate(7deg); }
+.hero-card::before { content:none; }
+.hero-card img { width:100%; height:100%; max-width:none; object-fit:cover; }
 .recipe-body { max-width:1120px; margin:0 auto; padding:3rem 2rem 5rem; display:grid; grid-template-columns:minmax(260px,.42fr) minmax(0,1fr); gap:1.2rem; }
 .panel { border:2px solid var(--ink); border-radius:4px; background:var(--bg); box-shadow:6px 6px 0 var(--ink); }
 .panel h2 { padding:1rem 1.1rem; border-bottom:2px solid var(--ink); font-size:2.2rem; text-transform:uppercase; }
@@ -38,7 +38,7 @@ ul,ol { display:grid; gap:.75rem; padding-left:1.2rem; font-size:1rem; line-heig
 .tip { padding:1rem 1.1rem; border:2px solid var(--ink); border-radius:4px; background:var(--paper); font-weight:800; line-height:1.45; text-transform:uppercase; }
 .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.2rem; }
 footer { padding:2.4rem; border-top:2px solid var(--ink); background:var(--ink); color:var(--paper); text-align:center; }
-@media (max-width:900px){ nav{grid-template-columns:1fr auto;padding:0 1.2rem}.nav-links{display:none}.recipe-hero,.recipe-body{grid-template-columns:1fr}.recipe-hero{padding:3rem 1.2rem}.hero-card{min-height:320px}.hero-card img{max-height:270px} }
+@media (max-width:900px){ nav{grid-template-columns:1fr auto;padding:0 1.2rem}.nav-links{display:none}.recipe-hero,.recipe-body{grid-template-columns:1fr}.recipe-hero{padding:3rem 1.2rem}.hero-card{min-height:320px}.hero-card img{max-height:none} }
 @media (max-width:620px){ nav{height:72px}.logo{font-size:1.45rem}.recipe-hero{margin-top:72px}h1{font-size:4.2rem}.recipe-body{padding:2rem 1.2rem 3rem}.meta-grid{grid-template-columns:1fr}.btn{width:100%} }
 </style>
 </head>
@@ -60,7 +60,7 @@ footer { padding:2.4rem; border-top:2px solid var(--ink); background:var(--ink);
     <p class="lead">Zielony poranek dla tych, którzy wiecznie się spieszą. Kremowa baza, banan, matcha i Holy Matcha na wierzchu, czyli energia bez robienia z kuchni laboratorium.</p>
     <div class="actions"><a href="../index.html#przepisy" class="btn">Wróć do przepisów</a></div>
   </div>
-  <div class="hero-card"><img src="../produkt/holy_matcha.svg" alt="KRUSHONKA Holy Matcha"></div>
+  <div class="hero-card"><img src="../uploads/recipes/matcha-bowl.webp" alt="Matcha bowl z KRUSHONKĄ Holy Matcha"></div>
 </header>
 <main class="recipe-body">
   <aside class="panel">
