@@ -5,12 +5,24 @@
       "destination": "/project/uploads/:path*"
     },
     {
+      "source": "/index.html",
+      "destination": "/project/index.html"
+    },
+    {
+      "source": "/aktualnosci/:slug.html",
+      "destination": "/project/aktualnosci/:slug.html"
+    },
+    {
       "source": "/aktualnosci/:slug",
       "destination": "/project/aktualnosci/:slug.html"
     },
     {
+      "source": "/przepisy/:slug.html",
+      "destination": "/project/przepisy/:slug.html"
+    },
+    {
       "source": "/przepisy/:slug",
-      "destination": "/project/przepisy/:slug"
+      "destination": "/project/przepisy/:slug.html"
     },
     {
       "source": "/",
